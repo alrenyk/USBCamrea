@@ -1,0 +1,164 @@
+
+
+//----- p1 1300 8bit PLL---------------------------------------------------------//
+EnableClockMngmnt1[]
+
+	(2, 0x0000);	//# Monochrome sensor
+	(8, 0x0000);	//# Release PLL soft reset
+	(16, 0x0003);	//# Enable PLL
+	(17, 0x210F);	//# Configure PLL
+	
+	(20, 0x0000);	//# Configure clock management
+	
+	(26, 0x1180);	//# Configure PLL lock detector
+	(27, 0xCCBC);	//# Configure PLL lock detector
+	(32, 0x400C);	//# Configure clock management
+
+ EnableClockMngmnt2[]
+
+	(9, 0x0000);	//# Release clock generator Soft Reset
+	(32, 0x400E);	//# Enable logic clock
+	(34, 0x0001);	//# Enable logic blocks
+	(128, 0x0000);	//# specific for demo kit (not in datasheet)
+
+ RequiredUploads_8bit[]
+	(41, 0x085F);
+	(42, 0x4110);
+	(43, 0x0008);
+	(65, 0x382B);
+	(66, 0x53C8);
+	(67, 0x0665);
+	(68, 0x0085);
+	(70, 0x1111);
+	(72, 0x0017);	//# error in datasheet (0x0010 vs 0x0017)
+	(128, 0x4714);
+	(129, 0xA001);	//# Configure 8-bit mode
+	(171, 0x1002);
+	(175, 0x0080);
+	(176, 0x00E6);
+	(177, 0x0400);
+//#	(192, 0x080C)
+	(194, 0x02A4); 	//# datasheet = 0x0224 (no FSS/FSE), demo kit requires FSE so 0x02A4
+	(197, 0x0306);
+	(204, 0x01E1);
+	(207, 0x0000);
+	(211, 0x0E49);
+	(215, 0x111F);
+	(216, 0x7F00);
+	(219, 0x0020);
+	(220, 0x3A28);
+	(221, 0x624D);
+	(222, 0x624D);
+	(224, 0x3E5E);
+	(227, 0x0000);
+	(250, 0x2081);
+	(384, 0xC800);
+	(385, 0xFB1F);
+	(386, 0xFB1F);
+	(387, 0xFB12);
+	(388, 0xF903);
+	(389, 0xF802);
+	(390, 0xF30F);
+	(391, 0xF30F);
+	(392, 0xF30F);
+	(393, 0xF30A);
+	(394, 0xF101);
+	(395, 0xF00A);
+	(396, 0xF24B);
+	(397, 0xF226);
+	(398, 0xF001);
+	(399, 0xF402);
+	(400, 0xF001);
+	(401, 0xF402);
+	(402, 0xF001);
+	(403, 0xF401);
+	(404, 0xF007);
+	(405, 0xF20F);
+	(406, 0xF20F);
+	(407, 0xF202);
+	(408, 0xF006);
+	(409, 0xEC02);
+	(410, 0xE801);
+	(411, 0xEC02);
+	(412, 0xE801);
+	(413, 0xEC02);
+	(414, 0xC801);
+	(415, 0xC800);
+	(416, 0xC800);
+	(417, 0xCC02);
+	(418, 0xC801);
+	(419, 0xCC02);
+	(420, 0xC801);
+	(421, 0xCC02);
+	(422, 0xC805);
+	(423, 0xC800);
+	(424, 0x0030);
+	(425, 0x207C);
+	(426, 0x2071);
+	(427, 0x0074);
+	(428, 0x107F);
+	(429, 0x1072);
+	(430, 0x1074);
+	(431, 0x0076);
+	(432, 0x0031);
+	(433, 0x21BB);
+	(434, 0x20B1);
+	(435, 0x20B1);
+	(436, 0x00B1);
+	(437, 0x10BF);
+	(438, 0x10B2);
+	(439, 0x10B4);
+	(440, 0x00B1);
+	(441, 0x0030);
+	(442, 0x0030);
+	(443, 0x217B);
+	(444, 0x2071);
+	(445, 0x2071);
+	(446, 0x0074);
+	(447, 0x107F);
+	(448, 0x1072);
+	(449, 0x1074);
+	(450, 0x0076);
+	(451, 0x0031);
+	(452, 0x20BB);
+	(453, 0x20B1);
+	(454, 0x20B1);
+	(455, 0x00B1);
+	(456, 0x10BF);
+	(457, 0x10B2);
+	(458, 0x10B4);
+	(459, 0x00B1);
+	(460, 0x0030);
+	(461, 0x0030);
+	(462, 0x207C);
+	(463, 0x2071);
+	(464, 0x0073);
+	(465, 0x017A);
+	(466, 0x0078);
+	(467, 0x1074);
+	(468, 0x0076);
+	(469, 0x0031);
+	(470, 0x21BB);
+	(471, 0x20B1);
+	(472, 0x20B1);
+	(473, 0x00B1);
+	(474, 0x10BF);
+	(475, 0x10B2);
+	(476, 0x10B4);
+	(477, 0x00B1);
+	(478, 0x0030);
+
+ SoftPowerUp_8bit[]
+
+	(32, 0x400F);	//# Enable analog clock
+	(10, 0x0000);	//# Release soft reset state
+	(64, 0x0001);	//# Enable biasing block
+	(72, 0x0017);	//# Enable charge pump
+	(40, 0x0003);	//# Enable column multiplexer
+	(42, 0x4113);	//# Configure image core
+	(48, 0x0001);	//# Enable AFE
+	(112, 0x0007);	//# Enable LVDS transmitters
+
+ EnableSequencer_8bit[]
+
+	(192, 0x080D);	//# Enable sequencer to start image grab - zero ROT
